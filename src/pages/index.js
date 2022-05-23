@@ -131,7 +131,9 @@ const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
-      <Document file={""}>
+      <Document
+        file={"https://d1.awsstatic.com/whitepapers/AmazonS3BestPractices.pdf"}
+      >
         <Page pageNumber={1} />
       </Document>
       <h1 style={headingStyles}>

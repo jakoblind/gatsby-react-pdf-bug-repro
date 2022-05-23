@@ -1,16 +1,16 @@
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   actions.setWebpackConfig({
-    ...(stage === "build-html"
-      ? {
-          module: {
-            rules: [
-              {
-                test: /canvas/,
-                use: loaders.null(),
-              },
-            ],
-          },
-        }
-      : {}),
+    module: {
+      rules: [
+        {
+          test: /canvas/,
+          use: loaders.null(),
+        },
+        {
+          test: /\.(pdf)$/,
+          use: "file-loader",
+        },
+      ],
+    },
   });
 };
